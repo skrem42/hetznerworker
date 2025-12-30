@@ -13,6 +13,7 @@ from typing import Optional, List, Set
 
 from supabase_client import SupabaseClient
 from llm_analyzer import SubredditLLMAnalyzer
+from user_agents import get_random_user_agent, get_reddit_headers, get_reddit_cookies
 from config import (
     CRAWLER_PROXY,
     CRAWLER_ROTATION_URL,
@@ -91,21 +92,22 @@ class CrawlerLLM:
         """
         Fetch URL with aggressive retry logic and proxy rotation.
         Non-blocking - returns None after max retries.
+        Uses rotating user agents and realistic browser headers.
         """
         max_retries = max_retries or CRAWLER_RETRY_MAX
         
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-            "Accept": "application/json",
-        }
-        
         for attempt in range(max_retries):
             try:
+                # Get fresh user agent and headers for each attempt
+                headers = get_reddit_headers()
+                cookies = get_reddit_cookies()
+                
                 async with httpx.AsyncClient(
                     proxy=self.proxy,
                     timeout=CRAWLER_TIMEOUT_SECONDS,
                     verify=False,
-                    follow_redirects=True
+                    follow_redirects=True,
+                    cookies=cookies
                 ) as client:
                     response = await client.get(url, headers=headers)
                     
@@ -113,9 +115,16 @@ class CrawlerLLM:
                         return response.json()
                     
                     elif response.status_code in [403, 429]:
-                        logger.warning(f"HTTP {response.status_code} (attempt {attempt+1}/{max_retries}) - rotating IP")
+                        ua_short = headers['User-Agent'][:40]
+                        logger.warning(f"HTTP {response.status_code} (attempt {attempt+1}/{max_retries}) - UA: {ua_short}... - rotating IP & user agent")
                         await self.rotate_proxy()
                         await asyncio.sleep(5)  # Wait for IP to change
+                    
+                    elif response.status_code == 404:
+                        ua_short = headers['User-Agent'][:40]
+                        logger.warning(f"HTTP 404 (attempt {attempt+1}/{max_retries}) - UA: {ua_short}... - likely bot detection, rotating")
+                        await self.rotate_proxy()
+                        await asyncio.sleep(3)
                     
                     else:
                         logger.warning(f"HTTP {response.status_code} for {url}")

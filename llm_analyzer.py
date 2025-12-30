@@ -12,6 +12,7 @@ from typing import Optional
 from openai import AsyncOpenAI
 
 from config import OPENAI_API_KEY, CRAWLER_PROXY
+from user_agents import get_reddit_headers, get_reddit_cookies
 
 logger = logging.getLogger(__name__)
 
@@ -37,15 +38,19 @@ class SubredditLLMAnalyzer:
         """Fetch subreddit info and rules from Reddit JSON API."""
         url = f"https://www.reddit.com/r/{subreddit_name}/about.json"
         
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-            "Accept": "application/json",
-        }
-        
         # Try with retries
         for attempt in range(3):
             try:
-                async with httpx.AsyncClient(proxy=self.reddit_proxy, timeout=15.0, verify=False) as client:
+                # Get fresh user agent and headers for each attempt
+                headers = get_reddit_headers()
+                cookies = get_reddit_cookies()
+                
+                async with httpx.AsyncClient(
+                    proxy=self.reddit_proxy,
+                    timeout=15.0,
+                    verify=False,
+                    cookies=cookies
+                ) as client:
                     response = await client.get(url, headers=headers)
                     
                     if response.status_code == 200:
@@ -67,15 +72,14 @@ class SubredditLLMAnalyzer:
                         }
                     
                     elif response.status_code in [403, 429]:
-                        # Rotate proxy
-                        self.reddit_proxy = random.choice(SOAX_PROXIES)
+                        # Retry with different user agent (happens automatically on next attempt)
+                        logger.warning(f"HTTP {response.status_code} for r/{subreddit_name}, retrying with new user agent...")
                         await asyncio.sleep(2 ** attempt)
                     else:
                         await asyncio.sleep(1)
                         
             except Exception as e:
                 logger.warning(f"Attempt {attempt+1} failed for r/{subreddit_name}: {e}")
-                self.reddit_proxy = random.choice(SOAX_PROXIES)
                 await asyncio.sleep(2 ** attempt)
         
         return {"description": "", "rules": []}
