@@ -24,3 +24,7 @@ Thumbs.db
 # Monitor history
 logs/monitor_history.json
 
+# Railway
+.railway/
+railway_env_vars.txt
+

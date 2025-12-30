@@ -1,0 +1,16 @@
+[phases.setup]
+nixPkgs = ["python313", "postgresql"]
+
+[phases.install]
+cmds = [
+    "pip install -r requirements.txt",
+    "playwright install-deps",
+    "playwright install chromium"
+]
+
+[phases.build]
+cmds = ["echo 'Build complete'"]
+
+[start]
+cmd = "python crawler_llm.py"
+
