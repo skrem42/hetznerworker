@@ -55,15 +55,21 @@ This setup consists of two independent workers that run simultaneously:
 # SSH into your Hetzner VPS
 ssh root@your-server-ip
 
-# Clone/upload this directory
+# Clone your repository
 cd /root
-# (Upload hetzner-worker folder via scp or git)
+git clone https://github.com/your-username/redditscraper.git
+cd redditscraper/hetzner-worker
+
+# Create .env file from example
+cp env.example .env
+nano .env  # Edit with your credentials
 
 # Run setup script
-cd hetzner-worker
 chmod +x setup.sh
 sudo ./setup.sh
 ```
+
+**Important**: Fill in your `.env` file with real credentials before running setup!
 
 ### 2. Configure AdsPower
 
@@ -124,15 +130,11 @@ ssh -L 50325:localhost:50325 root@your-server-ip
 ### 4. Get Profile IDs
 
 1. In AdsPower, right-click each profile → "Copy User ID"
-2. Update `config.py`:
+2. Update `.env` file:
 
-```python
-ADSPOWER_PROFILE_IDS = [
-    "j1x9k2m3",  # Replace with your actual profile IDs
-    "k2y8l3n4",
-    "l3z7m4o5",
-    # ... 10 total
-]
+```bash
+# Example with 2 profiles (add more comma-separated)
+ADSPOWER_PROFILE_IDS=j1x9k2m3,k2y8l3n4,l3z7m4o5
 ```
 
 ### 5. Enable AdsPower API

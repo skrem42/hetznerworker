@@ -10,30 +10,24 @@ load_dotenv()
 # =============================================================================
 # SUPABASE CONFIGURATION
 # =============================================================================
-SUPABASE_URL = "https://jmchmbwhnmlednaycxqh.supabase.co"
-SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImptY2htYndobm1sZWRuYXljeHFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMzODI4MzYsImV4cCI6MjA3ODk1ODgzNn0.Ux8SqBEj1isHUGIiGh4I-MM54dUb3sd0D7VsRjRKDuU"
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY")
+
+if not SUPABASE_URL or not SUPABASE_ANON_KEY:
+    raise ValueError("SUPABASE_URL and SUPABASE_ANON_KEY must be set in .env file")
 
 # =============================================================================
 # ADSPOWER API CONFIGURATION
 # =============================================================================
-ADSPOWER_API_URL = "http://local.adspower.net:50325"
+ADSPOWER_API_URL = os.getenv("ADSPOWER_API_URL", "http://local.adspower.net:50325")
 
 # AdsPower Profile IDs - Get these from AdsPower UI after creating profiles
 # To get profile IDs: Open AdsPower → Right click profile → Copy User ID
-ADSPOWER_PROFILE_IDS = [
-    # Currently active browsers
-    "koeuril",
-    "koeus69",
-    # Commented out - add more as needed
-    # "koeusic",
-    # "koeuswn",
-    # "koev1yk",
-    # "koev27c",
-    # "koev2lc",
-    # "koev33x",
-    # "koev3lr",
-    # "koev3v3",
-]
+# Set in .env as: ADSPOWER_PROFILE_IDS=id1,id2,id3
+_profile_ids_str = os.getenv("ADSPOWER_PROFILE_IDS", "")
+if not _profile_ids_str:
+    raise ValueError("ADSPOWER_PROFILE_IDS must be set in .env file (comma-separated)")
+ADSPOWER_PROFILE_IDS = [pid.strip() for pid in _profile_ids_str.split(",") if pid.strip()]
 
 # =============================================================================
 # PROXY CONFIGURATION
@@ -41,14 +35,20 @@ ADSPOWER_PROFILE_IDS = [
 
 # Proxidize (for Intel Worker - configured in AdsPower profiles)
 # IP rotation URL for when needed
-PROXIDIZE_ROTATION_URL = "https://api.proxidize.com/api/v1/modem-token-command/rotate-modem-ip/bea349dca02dadc7784c7e91d4f6b005/"
+PROXIDIZE_ROTATION_URL = os.getenv("PROXIDIZE_ROTATION_URL")
+if not PROXIDIZE_ROTATION_URL:
+    raise ValueError("PROXIDIZE_ROTATION_URL must be set in .env file")
 
 # ProxyEmpire Mobile Proxy (for Crawler + LLM)
 # Using mobile proxy for better reliability with Reddit
-PROXYEMPIRE_HOST = "mobdedi.proxyempire.io"
-PROXYEMPIRE_PORT = 9000
-PROXYEMPIRE_USERNAME = "2ed80b8624"
-PROXYEMPIRE_PASSWORD = "570abb9a59"
+PROXYEMPIRE_HOST = os.getenv("PROXYEMPIRE_HOST")
+PROXYEMPIRE_PORT = int(os.getenv("PROXYEMPIRE_PORT", "9000"))
+PROXYEMPIRE_USERNAME = os.getenv("PROXYEMPIRE_USERNAME")
+PROXYEMPIRE_PASSWORD = os.getenv("PROXYEMPIRE_PASSWORD")
+
+if not all([PROXYEMPIRE_HOST, PROXYEMPIRE_USERNAME, PROXYEMPIRE_PASSWORD]):
+    raise ValueError("ProxyEmpire credentials must be set in .env file")
+
 PROXYEMPIRE_URL = f"http://{PROXYEMPIRE_USERNAME}:{PROXYEMPIRE_PASSWORD}@{PROXYEMPIRE_HOST}:{PROXYEMPIRE_PORT}"
 PROXYEMPIRE_ROTATION_URL = f"https://panel.proxyempire.io/dedicated-mobile/{PROXYEMPIRE_USERNAME}/get-new-ip-by-username"
 
@@ -59,7 +59,9 @@ CRAWLER_ROTATION_URL = PROXYEMPIRE_ROTATION_URL
 # =============================================================================
 # OPENAI CONFIGURATION
 # =============================================================================
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+if not OPENAI_API_KEY:
+    raise ValueError("OPENAI_API_KEY must be set in .env file")
 
 # =============================================================================
 # WORKER SETTINGS
