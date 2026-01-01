@@ -144,3 +144,5 @@ echo "   sudo systemctl enable intel-worker  # Auto-start on boot"
 echo "   sudo systemctl enable crawler-llm   # Auto-start on boot"
 echo ""
 
+
+

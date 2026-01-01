@@ -53,3 +53,5 @@ echo ""
 echo "📊 View logs: railway logs"
 echo "🌐 Open dashboard: railway open"
 
+
+

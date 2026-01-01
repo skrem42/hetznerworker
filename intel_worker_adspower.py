@@ -14,6 +14,7 @@ from playwright.async_api import async_playwright, Page
 
 from adspower_client import AdsPowerClient
 from supabase_client import SupabaseClient
+from user_agents import get_reddit_headers, get_reddit_cookies
 from config import (
     ADSPOWER_PROFILE_IDS,
     INTEL_BATCH_SIZE,
@@ -280,10 +281,11 @@ class IntelWorkerAdsPower:
         url = f"https://www.reddit.com/r/{subreddit_name}/about.json"
         
         try:
-            async with httpx.AsyncClient(timeout=10.0) as client:
-                response = await client.get(url, headers={
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-                })
+            headers = get_reddit_headers()
+            cookies = get_reddit_cookies()
+            
+            async with httpx.AsyncClient(timeout=10.0, cookies=cookies) as client:
+                response = await client.get(url, headers=headers)
                 
                 if response.status_code == 404:
                     return False, "Subreddit does not exist or is banned"
@@ -329,18 +331,21 @@ class IntelWorkerAdsPower:
         profile_id = None
         
         try:
-            # Check if this sub has been retried before
+            # Check if this sub has been retried before (has an error_message = previous attempt failed)
             try:
                 retry_check = self.supabase.client.table("nsfw_subreddit_intel").select(
-                    "error_message"
+                    "error_message, scrape_status"
                 ).eq("subreddit_name", subreddit_name.lower()).execute()
                 
-                # If sub has failed multiple times, do a quick JSON check first
+                # If sub has pending status and error message, it's a retry - check if banned first
                 if retry_check.data and len(retry_check.data) > 0:
-                    error_msg = retry_check.data[0].get("error_message", "")
-                    # Check if this is at least 2nd retry (error message will contain attempt info or multiple calls)
-                    if error_msg and ("Timeout" in error_msg or "No metrics" in error_msg):
-                        logger.debug(f"Checking accessibility of r/{subreddit_name} before retry...")
+                    record = retry_check.data[0]
+                    error_msg = record.get("error_message", "")
+                    status = record.get("scrape_status", "")
+                    
+                    # If this is a retry (has error message) OR is pending, check if banned
+                    if error_msg or status == "pending":
+                        logger.debug(f"Checking accessibility of r/{subreddit_name} before scraping...")
                         is_accessible, reason = await self.check_subreddit_accessible(subreddit_name)
                         
                         if not is_accessible:

@@ -187,3 +187,5 @@ SELECT AVG(subscribers) FROM subreddit_queue;
 - [ ] Check monitor.py for progress
 - [ ] Deploy to Hetzner VPS for uninterrupted operation
 
+
+
