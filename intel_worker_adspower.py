@@ -277,6 +277,10 @@ class IntelWorkerAdsPower:
         """
         Quick check if subreddit is accessible via JSON API (no proxy).
         Returns (is_accessible, reason)
+        
+        NOTE: We ONLY mark as permanently failed on 404 (doesn't exist).
+        403 could mean private OR that we're being blocked by Reddit,
+        so we let the browser handle it.
         """
         url = f"https://www.reddit.com/r/{subreddit_name}/about.json"
         
@@ -288,9 +292,12 @@ class IntelWorkerAdsPower:
                 response = await client.get(url, headers=headers)
                 
                 if response.status_code == 404:
+                    # 404 = definitely doesn't exist or is banned
                     return False, "Subreddit does not exist or is banned"
                 elif response.status_code == 403:
-                    return False, "Subreddit is private or restricted"
+                    # 403 could mean private OR we're being blocked
+                    # Let the browser try (it has proxies and better cookies)
+                    return True, "403 detected, will try browser with proxy"
                 elif response.status_code == 200:
                     data = response.json()
                     
@@ -337,20 +344,19 @@ class IntelWorkerAdsPower:
                     "error_message, scrape_status"
                 ).eq("subreddit_name", subreddit_name.lower()).execute()
                 
-                # If sub has pending status and error message, it's a retry - check if banned first
+                # Only do pre-check for subs that have ALREADY FAILED before (have error message)
                 if retry_check.data and len(retry_check.data) > 0:
                     record = retry_check.data[0]
                     error_msg = record.get("error_message", "")
-                    status = record.get("scrape_status", "")
                     
-                    # If this is a retry (has error message) OR is pending, check if banned
-                    if error_msg or status == "pending":
-                        logger.debug(f"Checking accessibility of r/{subreddit_name} before scraping...")
+                    # Only check if this is a retry (has a non-empty error message from previous attempt)
+                    if error_msg and error_msg.strip():
+                        logger.debug(f"Retry detected for r/{subreddit_name}, checking accessibility...")
                         is_accessible, reason = await self.check_subreddit_accessible(subreddit_name)
                         
                         if not is_accessible:
-                            # Sub is banned/deleted/private - mark as failed permanently
-                            logger.warning(f"✗ r/{subreddit_name}: {reason} - marking as failed")
+                            # Sub is definitively banned/deleted (404 from JSON API)
+                            logger.warning(f"✗ r/{subreddit_name}: {reason} - marking as permanently failed")
                             await self.supabase.upsert_subreddit_intel({
                                 "subreddit_name": subreddit_name.lower(),
                                 "display_name": f"r/{subreddit_name}",
