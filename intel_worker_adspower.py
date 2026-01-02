@@ -7,14 +7,12 @@ import asyncio
 import logging
 import sys
 import re
-import httpx
 from datetime import datetime, timezone
 from typing import Optional, Dict
 from playwright.async_api import async_playwright, Page
 
 from adspower_client import AdsPowerClient
 from supabase_client import SupabaseClient
-from user_agents import get_reddit_headers, get_reddit_cookies
 from config import (
     ADSPOWER_PROFILE_IDS,
     INTEL_BATCH_SIZE,
@@ -273,52 +271,6 @@ class IntelWorkerAdsPower:
         except:
             return None
     
-    async def check_subreddit_accessible(self, subreddit_name: str) -> tuple[bool, str]:
-        """
-        Quick check if subreddit is accessible via JSON API (no proxy).
-        Returns (is_accessible, reason)
-        
-        NOTE: We ONLY mark as permanently failed on 404 (doesn't exist).
-        403 could mean private OR that we're being blocked by Reddit,
-        so we let the browser handle it.
-        """
-        url = f"https://www.reddit.com/r/{subreddit_name}/about.json"
-        
-        try:
-            headers = get_reddit_headers()
-            cookies = get_reddit_cookies()
-            
-            async with httpx.AsyncClient(timeout=10.0, cookies=cookies) as client:
-                response = await client.get(url, headers=headers)
-                
-                if response.status_code == 404:
-                    # 404 = definitely doesn't exist or is banned
-                    return False, "Subreddit does not exist or is banned"
-                elif response.status_code == 403:
-                    # 403 could mean private OR we're being blocked
-                    # Let the browser try (it has proxies and better cookies)
-                    return True, "403 detected, will try browser with proxy"
-                elif response.status_code == 200:
-                    data = response.json()
-                    
-                    # Check if quarantined
-                    if data.get("data", {}).get("quarantine", False):
-                        return False, "Subreddit is quarantined"
-                    
-                    # Check if banned
-                    if data.get("reason") == "banned":
-                        return False, "Subreddit is banned"
-                    
-                    return True, "Accessible"
-                else:
-                    # Other errors - let browser handle it
-                    return True, f"Unknown status {response.status_code}, will try browser"
-                    
-        except Exception as e:
-            # Network errors - let browser handle it
-            logger.debug(f"JSON check failed for r/{subreddit_name}: {e}")
-            return True, "JSON check failed, will try browser"
-    
     async def process_batch(self, subreddits: list):
         """Process a batch of subreddits in parallel using available browsers."""
         tasks = []
@@ -334,42 +286,11 @@ class IntelWorkerAdsPower:
         """
         Scrape a subreddit with timeout and error handling.
         Non-blocking - always returns, never crashes.
+        If scraping fails, marks for retry and moves on.
         """
         profile_id = None
         
         try:
-            # Check if this sub has been retried before (has an error_message = previous attempt failed)
-            try:
-                retry_check = self.supabase.client.table("nsfw_subreddit_intel").select(
-                    "error_message, scrape_status"
-                ).eq("subreddit_name", subreddit_name.lower()).execute()
-                
-                # Only do pre-check for subs that have ALREADY FAILED before (have error message)
-                if retry_check.data and len(retry_check.data) > 0:
-                    record = retry_check.data[0]
-                    error_msg = record.get("error_message", "")
-                    
-                    # Only check if this is a retry (has a non-empty error message from previous attempt)
-                    if error_msg and error_msg.strip():
-                        logger.debug(f"Retry detected for r/{subreddit_name}, checking accessibility...")
-                        is_accessible, reason = await self.check_subreddit_accessible(subreddit_name)
-                        
-                        if not is_accessible:
-                            # Sub is definitively banned/deleted (404 from JSON API)
-                            logger.warning(f"✗ r/{subreddit_name}: {reason} - marking as permanently failed")
-                            await self.supabase.upsert_subreddit_intel({
-                                "subreddit_name": subreddit_name.lower(),
-                                "display_name": f"r/{subreddit_name}",
-                                "scrape_status": "failed",
-                                "error_message": reason,
-                                "last_scraped_at": datetime.now(timezone.utc).isoformat(),
-                            })
-                            self.stats["failed"] += 1
-                            return
-            except Exception as e:
-                # JSON check failed - continue with normal scraping
-                logger.debug(f"Pre-check error for r/{subreddit_name}: {e}")
-            
             # Acquire browser from queue (with timeout)
             async with asyncio.timeout(60):
                 profile_id = await self.browser_queue.get()
