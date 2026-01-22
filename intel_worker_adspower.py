@@ -123,7 +123,7 @@ class IntelWorkerAdsPower:
                 # Add to queue
                 await self.browser_queue.put(profile_id)
                 
-                logger.info(f"✓ Browser {profile_id} ready (port {debug_port})")
+                logger.info(f"[OK] Browser {profile_id} ready (port {debug_port})")
                 
             except Exception as e:
                 logger.error(f"Error initializing browser {profile_id}: {e}")
@@ -174,7 +174,7 @@ class IntelWorkerAdsPower:
                     timeout=45000,  # Give it up to 45s to find stats
                     state="attached"
                 )
-                logger.debug(f"✓ Stats elements found for r/{subreddit_name}")
+                logger.debug(f"[OK] Stats elements found for r/{subreddit_name}")
             except:
                 # Stats might not be available, but continue anyway
                 logger.debug(f"Stats not found for r/{subreddit_name}, continuing...")
@@ -183,6 +183,33 @@ class IntelWorkerAdsPower:
             
             # Extract data immediately (don't wait for anything else)
             content = await page.content()
+            page_title = await page.title()
+            
+            # Check if subreddit is banned/private/deleted/quarantined
+            banned_indicators = [
+                "banned", "private", "deleted", "quarantined", 
+                "not found", "doesn't exist", "no longer available"
+            ]
+            
+            page_title_lower = page_title.lower()
+            content_lower = content.lower()
+            
+            # Check title and content for ban indicators
+            is_unavailable = any(indicator in page_title_lower for indicator in banned_indicators)
+            
+            # Also check for specific Reddit error messages in content
+            if not is_unavailable:
+                is_unavailable = (
+                    "this community has been banned" in content_lower or
+                    "this community is private" in content_lower or
+                    "this subreddit has been banned" in content_lower or
+                    "you must be invited" in content_lower or
+                    "this community has been set to private" in content_lower
+                )
+            
+            if is_unavailable:
+                logger.warning(f"[X] r/{subreddit_name}: Subreddit is unavailable (banned/private/deleted)")
+                return {"permanently_failed": True, "error": "Subreddit banned/private/deleted"}
             
             data = {
                 "subreddit_name": subreddit_name.lower(),
@@ -207,7 +234,7 @@ class IntelWorkerAdsPower:
             
             # Only mark as completed if we got at least some data
             if not data.get("weekly_visitors") and not data.get("weekly_contributions"):
-                logger.warning(f"✗ r/{subreddit_name}: No metrics found, will retry")
+                logger.warning(f"X r/{subreddit_name}: No metrics found, will retry")
                 return None
             
             # Mark as completed
@@ -220,7 +247,7 @@ class IntelWorkerAdsPower:
                 )
             
             logger.info(
-                f"✓ r/{subreddit_name}: "
+                f"[OK] r/{subreddit_name}: "
                 f"{data.get('weekly_visitors', 'N/A')} visitors, "
                 f"{data.get('weekly_contributions', 'N/A')} contributions"
             )
@@ -307,9 +334,18 @@ class IntelWorkerAdsPower:
                 result = await self.scrape_subreddit(subreddit_name, page)
             
             if result:
-                # Save to database
-                await self.supabase.upsert_subreddit_intel(result)
-                self.stats["scraped"] += 1
+                # Check if this is a permanently failed sub (banned/private/deleted)
+                if result.get("permanently_failed"):
+                    await self.supabase.mark_intel_failed(
+                        subreddit_name, 
+                        result.get("error", "Subreddit unavailable")
+                    )
+                    self.stats["failed"] += 1
+                    logger.info(f"Permanently failed r/{subreddit_name}")
+                else:
+                    # Save to database
+                    await self.supabase.upsert_subreddit_intel(result)
+                    self.stats["scraped"] += 1
             else:
                 # Mark for retry
                 await self.supabase.mark_for_retry(subreddit_name, "Scrape returned no data")
