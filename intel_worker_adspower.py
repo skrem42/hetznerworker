@@ -28,7 +28,7 @@ from config import (
     HEALTH_CHECK_INTERVAL,
 )
 
-# Configure logging
+# Configure logging - suppress verbose httpx logs
 logging.basicConfig(
     level=getattr(logging, LOG_LEVEL),
     format=LOG_FORMAT,
@@ -38,6 +38,10 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+
+# Suppress noisy HTTP request logs
+logging.getLogger("httpx").setLevel(logging.WARNING)
+logging.getLogger("httpcore").setLevel(logging.WARNING)
 
 
 class IntelWorkerAdsPower:
@@ -538,9 +542,7 @@ class IntelWorkerAdsPower:
                     await asyncio.sleep(60)
                     continue
                 
-                logger.info(f"\n{'='*80}")
-                logger.info(f"Processing batch of {len(pending)} subreddits")
-                logger.info(f"{'='*80}")
+                logger.info(f"--- Batch: {len(pending)} subs ---")
                 
                 # Process batch
                 await self.process_batch(pending)
@@ -559,20 +561,20 @@ class IntelWorkerAdsPower:
             await self.cleanup()
     
     def log_stats(self):
-        """Log current statistics."""
+        """Log current statistics - compact one-liner for easy monitoring."""
         runtime = (datetime.now(timezone.utc) - self.stats["start_time"]).total_seconds()
         hours = runtime / 3600
         rate = self.stats["scraped"] / hours if hours > 0 else 0
         
-        logger.info(f"\n{'='*80}")
-        logger.info("STATS")
-        logger.info(f"  Scraped:  {self.stats['scraped']}")
-        logger.info(f"  Retries:  {self.stats['retries']}")
-        logger.info(f"  Failed:   {self.stats['failed']}")
-        logger.info(f"  Rate:     {rate:.1f} subs/hour")
-        logger.info(f"  Runtime:  {hours:.1f}h")
-        logger.info(f"  Browsers: {len(self.active_browsers)}/{len(ADSPOWER_PROFILE_IDS)}")
-        logger.info(f"{'='*80}\n")
+        # Compact one-liner for easy grep: STATS|scraped|retries|failed|rate|runtime|browsers
+        logger.info(
+            f"STATS: {self.stats['scraped']} scraped | "
+            f"{self.stats['retries']} retries | "
+            f"{self.stats['failed']} failed | "
+            f"{rate:.0f}/hr | "
+            f"{hours:.1f}h | "
+            f"{len(self.active_browsers)}/{len(ADSPOWER_PROFILE_IDS)} browsers"
+        )
     
     async def cleanup(self):
         """Cleanup resources."""

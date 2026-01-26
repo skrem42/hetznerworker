@@ -141,7 +141,7 @@ class SupabaseClient:
             return pending[:limit]
             
         except Exception as e:
-            logger.warning(f"RPC failed, using fallback: {e}")
+            logger.debug(f"RPC unavailable, using fallback query")
             # Fallback to client-side filtering
             try:
                 all_queue_subs = []
@@ -167,7 +167,7 @@ class SupabaseClient:
                     
                     offset += page_size
                 
-                logger.info(f"Fetched {len(all_queue_subs)} subreddits from queue")
+                logger.debug(f"Fetched {len(all_queue_subs)} subreddits from queue")
                 
                 # Get already scraped names
                 all_intel_names = []

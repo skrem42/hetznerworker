@@ -29,7 +29,7 @@ from config import (
     LOG_FORMAT,
 )
 
-# Configure logging
+# Configure logging - suppress verbose httpx logs
 logging.basicConfig(
     level=getattr(logging, LOG_LEVEL),
     format=LOG_FORMAT,
@@ -39,6 +39,10 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+
+# Suppress noisy HTTP request logs
+logging.getLogger("httpx").setLevel(logging.WARNING)
+logging.getLogger("httpcore").setLevel(logging.WARNING)
 
 
 class CrawlerLLM:
