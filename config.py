@@ -68,7 +68,7 @@ if not OPENAI_API_KEY:
 # =============================================================================
 
 # Intel Worker (AdsPower)
-INTEL_BATCH_SIZE = 6  # Number of subreddits to fetch per batch (3x browsers)
+INTEL_BATCH_SIZE = 4  # Number of subreddits to fetch per batch (2x browsers for buffer)
 INTEL_TIMEOUT_SECONDS = 180  # Timeout per subreddit scrape (3 minutes max)
 INTEL_CONCURRENT = 2  # Match number of active browsers
 INTEL_DELAY_BETWEEN_BATCHES = 2  # Seconds between batches

@@ -186,29 +186,42 @@ class IntelWorkerAdsPower:
             page_title = await page.title()
             
             # Check if subreddit is banned/private/deleted/quarantined
-            banned_indicators = [
-                "banned", "private", "deleted", "quarantined", 
-                "not found", "doesn't exist", "no longer available"
-            ]
-            
             page_title_lower = page_title.lower()
             content_lower = content.lower()
             
-            # Check title and content for ban indicators
-            is_unavailable = any(indicator in page_title_lower for indicator in banned_indicators)
+            # Check for explicit ban/private messages
+            ban_messages = [
+                "this community has been banned",
+                "this community is private",
+                "this subreddit has been banned",
+                "you must be invited",
+                "this community has been set to private",
+                "r/all - reddit",  # Redirected to r/all means doesn't exist
+                "page not found",
+                "sorry, this community is private",
+            ]
             
-            # Also check for specific Reddit error messages in content
+            is_unavailable = any(msg in content_lower for msg in ban_messages)
+            
+            # Also check page title
             if not is_unavailable:
-                is_unavailable = (
-                    "this community has been banned" in content_lower or
-                    "this community is private" in content_lower or
-                    "this subreddit has been banned" in content_lower or
-                    "you must be invited" in content_lower or
-                    "this community has been set to private" in content_lower
-                )
+                title_indicators = ["banned", "private", "not found", "reddit - dive into anything"]
+                # If title is generic Reddit title (not subreddit name), something's wrong
+                is_unavailable = any(indicator in page_title_lower for indicator in title_indicators) and subreddit_name.lower() not in page_title_lower
+            
+            # If page loaded but has absolutely no subreddit-specific content, it's likely banned/private
+            if not is_unavailable:
+                # Check if page has basic subreddit elements
+                has_sub_header = "shreddit-subreddit-header" in content or f"r/{subreddit_name}" in content_lower
+                has_any_posts = "shreddit-post" in content or "slot=" in content
+                
+                # If no subreddit content at all, it's unavailable
+                if not has_sub_header and not has_any_posts:
+                    is_unavailable = True
+                    logger.debug(f"r/{subreddit_name}: No subreddit content found on page")
             
             if is_unavailable:
-                logger.warning(f"[X] r/{subreddit_name}: Subreddit is unavailable (banned/private/deleted)")
+                logger.warning(f"[X] r/{subreddit_name}: Subreddit is unavailable (banned/private/deleted) - page title: '{page_title[:60]}'")
                 return {"permanently_failed": True, "error": "Subreddit banned/private/deleted"}
             
             data = {
@@ -314,10 +327,26 @@ class IntelWorkerAdsPower:
         Scrape a subreddit with timeout and error handling.
         Non-blocking - always returns, never crashes.
         If scraping fails, marks for retry and moves on.
+        After 3 failed attempts with same error, marks as permanently failed.
         """
         profile_id = None
         
         try:
+            # Check how many times this sub has failed before
+            failure_count = 0
+            try:
+                retry_check = self.supabase.client.table("nsfw_subreddit_intel").select(
+                    "error_message"
+                ).eq("subreddit_name", subreddit_name.lower()).execute()
+                
+                if retry_check.data and len(retry_check.data) > 0:
+                    error_msg = retry_check.data[0].get("error_message", "")
+                    # Count how many times "No metrics" appears (each retry adds it)
+                    if "Scrape returned no data" in error_msg or "No metrics" in error_msg:
+                        failure_count = error_msg.count("No metrics") + error_msg.count("Scrape returned no data")
+            except:
+                pass
+            
             # Acquire browser from queue (with timeout)
             async with asyncio.timeout(60):
                 profile_id = await self.browser_queue.get()
@@ -347,9 +376,15 @@ class IntelWorkerAdsPower:
                     await self.supabase.upsert_subreddit_intel(result)
                     self.stats["scraped"] += 1
             else:
-                # Mark for retry
-                await self.supabase.mark_for_retry(subreddit_name, "Scrape returned no data")
-                self.stats["retries"] += 1
+                # If this sub has failed 3+ times, mark as permanently failed
+                if failure_count >= 3:
+                    logger.warning(f"[X] r/{subreddit_name}: Failed {failure_count} times - marking as permanently failed")
+                    await self.supabase.mark_intel_failed(subreddit_name, f"No metrics after {failure_count} attempts")
+                    self.stats["failed"] += 1
+                else:
+                    # Mark for retry
+                    await self.supabase.mark_for_retry(subreddit_name, "Scrape returned no data")
+                    self.stats["retries"] += 1
                 
         except asyncio.TimeoutError:
             logger.warning(f"Timeout on r/{subreddit_name}, moving on")
