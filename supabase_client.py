@@ -119,9 +119,10 @@ class SupabaseClient:
             pending = result.data or []
             
             # If we have fewer than limit, also get pending/failed ones (retries)
+            # BUT exclude permanently banned/private subs
             if len(pending) < limit:
                 retry_result = self.client.table("nsfw_subreddit_intel").select(
-                    "subreddit_name, subscribers"
+                    "subreddit_name, subscribers, error_message"
                 ).in_(
                     "scrape_status", ["pending", "failed"]
                 ).order(
@@ -129,7 +130,13 @@ class SupabaseClient:
                 ).limit(limit - len(pending)).execute()
                 
                 if retry_result.data:
-                    pending.extend(retry_result.data)
+                    # Filter out permanently banned/private subs
+                    for sub in retry_result.data:
+                        error_msg = sub.get("error_message", "").lower()
+                        # Skip if error indicates permanent failure
+                        if any(term in error_msg for term in ["banned", "private", "deleted", "unavailable"]):
+                            continue
+                        pending.append(sub)
             
             return pending[:limit]
             
@@ -168,7 +175,7 @@ class SupabaseClient:
                 
                 while True:
                     intel_result = self.client.table("nsfw_subreddit_intel").select(
-                        "subreddit_name, scrape_status"
+                        "subreddit_name, scrape_status, error_message"
                     ).range(intel_offset, intel_offset + page_size - 1).execute()
                     
                     if not intel_result.data or len(intel_result.data) == 0:
@@ -182,11 +189,18 @@ class SupabaseClient:
                     intel_offset += page_size
                 
                 # Filter: not scraped OR pending/failed (for retry)
-                scraped_names = set(
-                    row["subreddit_name"].lower() 
-                    for row in all_intel_names
-                    if row.get("scrape_status") not in ["pending", "failed", None]
-                )
+                # BUT exclude permanently banned/private subs
+                scraped_names = set()
+                for row in all_intel_names:
+                    status = row.get("scrape_status")
+                    error_msg = (row.get("error_message") or "").lower()
+                    
+                    # Exclude if completed
+                    if status == "completed":
+                        scraped_names.add(row["subreddit_name"].lower())
+                    # Exclude if permanently failed (banned/private/deleted)
+                    elif status == "failed" and any(term in error_msg for term in ["banned", "private", "deleted", "unavailable"]):
+                        scraped_names.add(row["subreddit_name"].lower())
                 
                 pending = []
                 for row in all_queue_subs:

@@ -13880,3 +13880,788 @@ navigating to "https://www.reddit.com/r/kneesupfeetdown", waiting until "domcont
 2025-12-30 17:57:05,329 - __main__ - INFO - Processing batch of 6 subreddits
 2025-12-30 17:57:05,329 - __main__ - INFO - ================================================================================
 2025-12-30 17:57:05,330 - __main__ - INFO - Cleaning up...
+2026-01-26 19:47:11,065 - __main__ - INFO - ================================================================================
+2026-01-26 19:47:11,065 - __main__ - INFO - INTEL WORKER STARTING (AdsPower Mode)
+2026-01-26 19:47:11,067 - __main__ - INFO -   Batch Size: 4
+2026-01-26 19:47:11,067 - __main__ - INFO -   Concurrent: 2
+2026-01-26 19:47:11,067 - __main__ - INFO -   Timeout: 180s
+2026-01-26 19:47:11,067 - __main__ - INFO - ================================================================================
+2026-01-26 19:47:11,067 - __main__ - INFO - ================================================================================
+2026-01-26 19:47:11,067 - __main__ - INFO - Initializing AdsPower Browsers
+2026-01-26 19:47:11,067 - __main__ - INFO - ================================================================================
+2026-01-26 19:47:11,543 - __main__ - INFO - Starting browser for profile koeuril...
+2026-01-26 19:47:12,602 - adspower_client - ERROR - Error starting profile koeuril: All connection attempts failed
+2026-01-26 19:47:12,603 - __main__ - ERROR - Failed to start profile koeuril
+2026-01-26 19:47:12,603 - __main__ - INFO - Starting browser for profile koeus69...
+2026-01-26 19:47:12,609 - adspower_client - ERROR - Error starting profile koeus69: All connection attempts failed
+2026-01-26 19:47:12,609 - __main__ - ERROR - Failed to start profile koeus69
+2026-01-26 19:47:12,609 - __main__ - INFO - ================================================================================
+2026-01-26 19:47:12,610 - __main__ - INFO - Initialized 0/2 browsers
+2026-01-26 19:47:12,610 - __main__ - INFO - ================================================================================
+2026-01-26 19:48:52,562 - __main__ - INFO - ================================================================================
+2026-01-26 19:48:52,563 - __main__ - INFO - INTEL WORKER STARTING (AdsPower Mode)
+2026-01-26 19:48:52,563 - __main__ - INFO -   Batch Size: 4
+2026-01-26 19:48:52,563 - __main__ - INFO -   Concurrent: 2
+2026-01-26 19:48:52,563 - __main__ - INFO -   Timeout: 180s
+2026-01-26 19:48:52,563 - __main__ - INFO - ================================================================================
+2026-01-26 19:48:52,563 - __main__ - INFO - ================================================================================
+2026-01-26 19:48:52,563 - __main__ - INFO - Initializing AdsPower Browsers
+2026-01-26 19:48:52,563 - __main__ - INFO - ================================================================================
+2026-01-26 19:48:52,980 - __main__ - INFO - Starting browser for profile koeuril...
+2026-01-26 19:49:04,230 - httpx - INFO - HTTP Request: GET http://local.adspower.net:50325/api/v1/browser/start?user_id=koeuril "HTTP/1.1 200 OK"
+2026-01-26 19:49:04,231 - adspower_client - INFO - Started profile koeuril on port 50368
+2026-01-26 19:49:07,018 - __main__ - INFO - [OK] Browser koeuril ready (port 50368)
+2026-01-26 19:49:07,018 - __main__ - INFO - Starting browser for profile koeus69...
+2026-01-26 19:49:17,841 - httpx - INFO - HTTP Request: GET http://local.adspower.net:50325/api/v1/browser/start?user_id=koeus69 "HTTP/1.1 200 OK"
+2026-01-26 19:49:17,843 - adspower_client - INFO - Started profile koeus69 on port 50445
+2026-01-26 19:49:18,856 - __main__ - INFO - [OK] Browser koeus69 ready (port 50445)
+2026-01-26 19:49:18,857 - __main__ - INFO - ================================================================================
+2026-01-26 19:49:18,857 - __main__ - INFO - Initialized 2/2 browsers
+2026-01-26 19:49:18,857 - __main__ - INFO - ================================================================================
+2026-01-26 19:49:19,960 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/rpc/get_subreddits_not_in_intel "HTTP/2 400 Bad Request"
+2026-01-26 19:49:19,962 - supabase_client - WARNING - RPC failed, using fallback: {'message': 'structure of query does not match function result type', 'code': '42804', 'hint': None, 'details': 'Returned type integer does not match expected type bigint in column 2.'}
+2026-01-26 19:49:20,347 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:20,669 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:20,990 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:21,317 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:21,628 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:21,963 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:22,310 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=6000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:22,674 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=7000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:23,016 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=8000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:23,326 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=9000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:23,651 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=10000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:23,954 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=11000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:24,221 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=12000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:24,756 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=13000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:24,761 - supabase_client - INFO - Fetched 13230 subreddits from queue
+2026-01-26 19:49:25,002 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:25,257 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:25,523 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:25,790 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:26,052 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:26,333 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:49:26,353 - __main__ - INFO - 
+================================================================================
+2026-01-26 19:49:26,354 - __main__ - INFO - Processing batch of 4 subreddits
+2026-01-26 19:49:26,354 - __main__ - INFO - ================================================================================
+2026-01-26 19:49:26,682 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.palegirlsnsfw "HTTP/2 200 OK"
+2026-01-26 19:49:26,917 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.legendaryrizz "HTTP/2 200 OK"
+2026-01-26 19:49:27,169 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.treasurechestcelebs "HTTP/2 200 OK"
+2026-01-26 19:49:27,441 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.edmontongw "HTTP/2 200 OK"
+2026-01-26 19:50:24,877 - __main__ - WARNING - X r/legendaryrizz: No metrics found, will retry
+2026-01-26 19:50:25,273 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:50:26,927 - __main__ - INFO - Health check: 1 idle/healthy, 1 busy, 0 failed (total: 2)
+2026-01-26 19:50:27,484 - __main__ - WARNING - Timeout on r/edmontongw, moving on
+2026-01-26 19:50:27,738 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:50:31,408 - __main__ - WARNING - X r/palegirlsnsfw: No metrics found, will retry
+2026-01-26 19:50:31,691 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:51:23,958 - __main__ - WARNING - X r/treasurechestcelebs: No metrics found, will retry
+2026-01-26 19:51:24,490 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:51:24,492 - __main__ - INFO - 
+================================================================================
+2026-01-26 19:51:24,492 - __main__ - INFO - STATS
+2026-01-26 19:51:24,492 - __main__ - INFO -   Scraped:  0
+2026-01-26 19:51:24,492 - __main__ - INFO -   Retries:  4
+2026-01-26 19:51:24,492 - __main__ - INFO -   Failed:   0
+2026-01-26 19:51:24,492 - __main__ - INFO -   Rate:     0.0 subs/hour
+2026-01-26 19:51:24,492 - __main__ - INFO -   Runtime:  0.0h
+2026-01-26 19:51:24,492 - __main__ - INFO -   Browsers: 2/2
+2026-01-26 19:51:24,492 - __main__ - INFO - ================================================================================
+
+2026-01-26 19:51:26,741 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/rpc/get_subreddits_not_in_intel "HTTP/2 400 Bad Request"
+2026-01-26 19:51:26,742 - supabase_client - WARNING - RPC failed, using fallback: {'message': 'structure of query does not match function result type', 'code': '42804', 'hint': None, 'details': 'Returned type integer does not match expected type bigint in column 2.'}
+2026-01-26 19:51:27,000 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:27,273 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:27,539 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:27,802 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:28,064 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:28,323 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:28,582 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=6000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:28,826 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=7000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:29,126 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=8000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:29,389 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=9000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:29,699 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=10000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:29,975 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=11000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:30,251 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=12000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:30,504 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=13000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:30,507 - supabase_client - INFO - Fetched 13230 subreddits from queue
+2026-01-26 19:51:30,740 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:30,984 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:31,226 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:31,483 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:31,756 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:32,002 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:51:32,019 - __main__ - INFO - 
+================================================================================
+2026-01-26 19:51:32,020 - __main__ - INFO - Processing batch of 4 subreddits
+2026-01-26 19:51:32,020 - __main__ - INFO - ================================================================================
+2026-01-26 19:51:32,254 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.palegirlsnsfw "HTTP/2 200 OK"
+2026-01-26 19:51:32,504 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.legendaryrizz "HTTP/2 200 OK"
+2026-01-26 19:51:32,735 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.treasurechestcelebs "HTTP/2 200 OK"
+2026-01-26 19:51:32,976 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.edmontongw "HTTP/2 200 OK"
+2026-01-26 19:51:33,509 - __main__ - INFO - Health check: 0 idle/healthy, 2 busy, 0 failed (total: 2)
+2026-01-26 19:52:30,480 - __main__ - WARNING - X r/palegirlsnsfw: No metrics found, will retry
+2026-01-26 19:52:31,080 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:52:31,304 - __main__ - WARNING - X r/legendaryrizz: No metrics found, will retry
+2026-01-26 19:52:31,663 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:52:33,524 - __main__ - INFO - Health check: 2 idle/healthy, 0 busy, 0 failed (total: 2)
+2026-01-26 19:52:53,625 - __main__ - INFO - Cleaning up...
+2026-01-26 19:52:53,977 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task cancelling name='Task-1' coro=<main() done, defined at /Users/calummelling/Desktop/redditscraper/hetzner-worker/intel_worker_adspower.py:529> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.14/3.14.2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/tasks.py:810, ProtocolCallback.__init__.<locals>.cb() at /Users/calummelling/Desktop/redditscraper/venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:230]>
+2026-01-26 19:52:55,504 - __main__ - INFO - ================================================================================
+2026-01-26 19:52:55,504 - __main__ - INFO - INTEL WORKER STARTING (AdsPower Mode)
+2026-01-26 19:52:55,505 - __main__ - INFO -   Batch Size: 4
+2026-01-26 19:52:55,505 - __main__ - INFO -   Concurrent: 2
+2026-01-26 19:52:55,505 - __main__ - INFO -   Timeout: 180s
+2026-01-26 19:52:55,505 - __main__ - INFO - ================================================================================
+2026-01-26 19:52:55,505 - __main__ - INFO - ================================================================================
+2026-01-26 19:52:55,505 - __main__ - INFO - Initializing AdsPower Browsers
+2026-01-26 19:52:55,505 - __main__ - INFO - ================================================================================
+2026-01-26 19:52:55,878 - __main__ - INFO - Starting browser for profile koeuril...
+2026-01-26 19:52:56,603 - httpx - INFO - HTTP Request: GET http://local.adspower.net:50325/api/v1/browser/start?user_id=koeuril "HTTP/1.1 200 OK"
+2026-01-26 19:52:56,604 - adspower_client - INFO - Started profile koeuril on port 50368
+2026-01-26 19:52:56,662 - __main__ - INFO - [OK] Browser koeuril ready (port 50368)
+2026-01-26 19:52:56,663 - __main__ - INFO - Starting browser for profile koeus69...
+2026-01-26 19:52:56,666 - httpx - INFO - HTTP Request: GET http://local.adspower.net:50325/api/v1/browser/start?user_id=koeus69 "HTTP/1.1 200 OK"
+2026-01-26 19:52:56,666 - adspower_client - INFO - Started profile koeus69 on port 50445
+2026-01-26 19:52:56,737 - __main__ - INFO - [OK] Browser koeus69 ready (port 50445)
+2026-01-26 19:52:56,739 - __main__ - INFO - ================================================================================
+2026-01-26 19:52:56,740 - __main__ - INFO - Initialized 2/2 browsers
+2026-01-26 19:52:56,740 - __main__ - INFO - ================================================================================
+2026-01-26 19:52:57,158 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/rpc/get_subreddits_not_in_intel "HTTP/2 400 Bad Request"
+2026-01-26 19:52:57,159 - supabase_client - WARNING - RPC failed, using fallback: {'message': 'structure of query does not match function result type', 'code': '42804', 'hint': None, 'details': 'Returned type integer does not match expected type bigint in column 2.'}
+2026-01-26 19:52:57,611 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:52:57,850 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:52:58,110 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:52:58,377 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:52:58,630 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:52:58,910 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:52:59,171 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=6000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:52:59,463 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=7000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:52:59,723 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=8000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:52:59,975 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=9000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:53:00,322 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=10000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:53:00,598 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=11000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:53:01,039 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=12000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:53:01,306 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=13000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:53:01,310 - supabase_client - INFO - Fetched 13230 subreddits from queue
+2026-01-26 19:53:01,574 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:53:01,828 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:53:02,108 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:53:02,382 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:53:02,659 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:53:02,956 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:53:02,968 - __main__ - INFO - 
+================================================================================
+2026-01-26 19:53:02,968 - __main__ - INFO - Processing batch of 4 subreddits
+2026-01-26 19:53:02,968 - __main__ - INFO - ================================================================================
+2026-01-26 19:53:03,207 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.palegirlsnsfw "HTTP/2 200 OK"
+2026-01-26 19:53:03,423 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.legendaryrizz "HTTP/2 200 OK"
+2026-01-26 19:53:03,648 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.treasurechestcelebs "HTTP/2 200 OK"
+2026-01-26 19:53:03,895 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.edmontongw "HTTP/2 200 OK"
+2026-01-26 19:54:00,901 - __main__ - INFO - [DEBUG] r/palegirlsnsfw - Page title: 'Reddit - The heart of the internet'
+2026-01-26 19:54:00,902 - __main__ - INFO - [DEBUG] r/palegirlsnsfw - Content length: 419527 chars
+2026-01-26 19:54:00,903 - __main__ - INFO - [DEBUG] r/palegirlsnsfw - Has 'shreddit-subreddit-header': False
+2026-01-26 19:54:00,903 - __main__ - INFO - [DEBUG] r/palegirlsnsfw - Has 'weekly-active-users': False
+2026-01-26 19:54:00,909 - __main__ - WARNING - [X] r/palegirlsnsfw: No metrics found on page
+2026-01-26 19:54:00,910 - __main__ - WARNING - [X] r/palegirlsnsfw: Looks like banned/private sub (no header or metrics)
+2026-01-26 19:54:01,672 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:54:01,674 - __main__ - INFO - Permanently failed r/palegirlsnsfw
+2026-01-26 19:54:01,687 - __main__ - INFO - [DEBUG] r/legendaryrizz - Page title: 'Reddit - The heart of the internet'
+2026-01-26 19:54:01,687 - __main__ - INFO - [DEBUG] r/legendaryrizz - Content length: 419568 chars
+2026-01-26 19:54:01,688 - __main__ - INFO - [DEBUG] r/legendaryrizz - Has 'shreddit-subreddit-header': False
+2026-01-26 19:54:01,688 - __main__ - INFO - [DEBUG] r/legendaryrizz - Has 'weekly-active-users': False
+2026-01-26 19:54:01,694 - __main__ - WARNING - [X] r/legendaryrizz: No metrics found on page
+2026-01-26 19:54:01,694 - __main__ - WARNING - [X] r/legendaryrizz: Looks like banned/private sub (no header or metrics)
+2026-01-26 19:54:01,949 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:54:01,950 - __main__ - INFO - Permanently failed r/legendaryrizz
+2026-01-26 19:54:03,051 - __main__ - INFO - Health check: 2 idle/healthy, 0 busy, 0 failed (total: 2)
+2026-01-26 19:54:59,566 - __main__ - INFO - [DEBUG] r/edmontongw - Page title: 'Reddit - The heart of the internet'
+2026-01-26 19:54:59,567 - __main__ - INFO - [DEBUG] r/edmontongw - Content length: 419479 chars
+2026-01-26 19:54:59,569 - __main__ - INFO - [DEBUG] r/edmontongw - Has 'shreddit-subreddit-header': False
+2026-01-26 19:54:59,570 - __main__ - INFO - [DEBUG] r/edmontongw - Has 'weekly-active-users': False
+2026-01-26 19:54:59,576 - __main__ - WARNING - [X] r/edmontongw: No metrics found on page
+2026-01-26 19:54:59,578 - __main__ - WARNING - [X] r/edmontongw: Looks like banned/private sub (no header or metrics)
+2026-01-26 19:54:59,890 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:54:59,893 - __main__ - INFO - Permanently failed r/edmontongw
+2026-01-26 19:54:59,943 - __main__ - INFO - [DEBUG] r/treasurechestcelebs - Page title: 'Reddit - The heart of the internet'
+2026-01-26 19:54:59,943 - __main__ - INFO - [DEBUG] r/treasurechestcelebs - Content length: 419611 chars
+2026-01-26 19:54:59,944 - __main__ - INFO - [DEBUG] r/treasurechestcelebs - Has 'shreddit-subreddit-header': False
+2026-01-26 19:54:59,944 - __main__ - INFO - [DEBUG] r/treasurechestcelebs - Has 'weekly-active-users': False
+2026-01-26 19:54:59,949 - __main__ - WARNING - [X] r/treasurechestcelebs: No metrics found on page
+2026-01-26 19:54:59,949 - __main__ - WARNING - [X] r/treasurechestcelebs: Looks like banned/private sub (no header or metrics)
+2026-01-26 19:55:00,190 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:55:00,192 - __main__ - INFO - Permanently failed r/treasurechestcelebs
+2026-01-26 19:55:00,193 - __main__ - INFO - 
+================================================================================
+2026-01-26 19:55:00,193 - __main__ - INFO - STATS
+2026-01-26 19:55:00,193 - __main__ - INFO -   Scraped:  0
+2026-01-26 19:55:00,193 - __main__ - INFO -   Retries:  0
+2026-01-26 19:55:00,193 - __main__ - INFO -   Failed:   4
+2026-01-26 19:55:00,193 - __main__ - INFO -   Rate:     0.0 subs/hour
+2026-01-26 19:55:00,193 - __main__ - INFO -   Runtime:  0.0h
+2026-01-26 19:55:00,193 - __main__ - INFO -   Browsers: 2/2
+2026-01-26 19:55:00,193 - __main__ - INFO - ================================================================================
+
+2026-01-26 19:55:02,526 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/rpc/get_subreddits_not_in_intel "HTTP/2 400 Bad Request"
+2026-01-26 19:55:02,527 - supabase_client - WARNING - RPC failed, using fallback: {'message': 'structure of query does not match function result type', 'code': '42804', 'hint': None, 'details': 'Returned type integer does not match expected type bigint in column 2.'}
+2026-01-26 19:55:02,802 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:03,120 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:03,473 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:03,723 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:03,997 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:04,266 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:04,538 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=6000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:04,792 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=7000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:05,073 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=8000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:05,340 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=9000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:05,723 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=10000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:05,957 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=11000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:06,213 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=12000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:06,472 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=13000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:06,476 - supabase_client - INFO - Fetched 13230 subreddits from queue
+2026-01-26 19:55:06,703 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:07,022 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:07,286 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:07,638 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:07,879 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:08,116 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:55:08,141 - __main__ - INFO - 
+================================================================================
+2026-01-26 19:55:08,142 - __main__ - INFO - Processing batch of 4 subreddits
+2026-01-26 19:55:08,142 - __main__ - INFO - ================================================================================
+2026-01-26 19:55:08,361 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.palegirlsnsfw "HTTP/2 200 OK"
+2026-01-26 19:55:08,581 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.legendaryrizz "HTTP/2 200 OK"
+2026-01-26 19:55:08,804 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.treasurechestcelebs "HTTP/2 200 OK"
+2026-01-26 19:55:09,026 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.edmontongw "HTTP/2 200 OK"
+2026-01-26 19:55:09,798 - __main__ - INFO - Health check: 1 idle/healthy, 1 busy, 0 failed (total: 2)
+2026-01-26 19:56:06,594 - __main__ - INFO - [DEBUG] r/palegirlsnsfw - Page title: 'Reddit - The heart of the internet'
+2026-01-26 19:56:06,595 - __main__ - INFO - [DEBUG] r/palegirlsnsfw - Content length: 419521 chars
+2026-01-26 19:56:06,595 - __main__ - INFO - [DEBUG] r/palegirlsnsfw - Has 'shreddit-subreddit-header': False
+2026-01-26 19:56:06,595 - __main__ - INFO - [DEBUG] r/palegirlsnsfw - Has 'weekly-active-users': False
+2026-01-26 19:56:06,601 - __main__ - WARNING - [X] r/palegirlsnsfw: No metrics found on page
+2026-01-26 19:56:06,602 - __main__ - WARNING - [X] r/palegirlsnsfw: Looks like banned/private sub (no header or metrics)
+2026-01-26 19:56:07,112 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:56:07,113 - __main__ - INFO - Permanently failed r/palegirlsnsfw
+2026-01-26 19:56:07,247 - __main__ - INFO - [DEBUG] r/legendaryrizz - Page title: 'Reddit - The heart of the internet'
+2026-01-26 19:56:07,247 - __main__ - INFO - [DEBUG] r/legendaryrizz - Content length: 419574 chars
+2026-01-26 19:56:07,248 - __main__ - INFO - [DEBUG] r/legendaryrizz - Has 'shreddit-subreddit-header': False
+2026-01-26 19:56:07,248 - __main__ - INFO - [DEBUG] r/legendaryrizz - Has 'weekly-active-users': False
+2026-01-26 19:56:07,254 - __main__ - WARNING - [X] r/legendaryrizz: No metrics found on page
+2026-01-26 19:56:07,254 - __main__ - WARNING - [X] r/legendaryrizz: Looks like banned/private sub (no header or metrics)
+2026-01-26 19:56:07,463 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:56:07,464 - __main__ - INFO - Permanently failed r/legendaryrizz
+2026-01-26 19:56:09,809 - __main__ - INFO - Health check: 2 idle/healthy, 0 busy, 0 failed (total: 2)
+2026-01-26 19:57:05,074 - __main__ - INFO - [DEBUG] r/treasurechestcelebs - Page title: 'Reddit - The heart of the internet'
+2026-01-26 19:57:05,076 - __main__ - INFO - [DEBUG] r/treasurechestcelebs - Content length: 419605 chars
+2026-01-26 19:57:05,076 - __main__ - INFO - [DEBUG] r/treasurechestcelebs - Has 'shreddit-subreddit-header': False
+2026-01-26 19:57:05,077 - __main__ - INFO - [DEBUG] r/treasurechestcelebs - Has 'weekly-active-users': False
+2026-01-26 19:57:05,085 - __main__ - WARNING - [X] r/treasurechestcelebs: No metrics found on page
+2026-01-26 19:57:05,086 - __main__ - WARNING - [X] r/treasurechestcelebs: Looks like banned/private sub (no header or metrics)
+2026-01-26 19:57:05,358 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:57:05,359 - __main__ - INFO - Permanently failed r/treasurechestcelebs
+2026-01-26 19:57:05,715 - __main__ - INFO - [DEBUG] r/edmontongw - Page title: 'Reddit - The heart of the internet'
+2026-01-26 19:57:05,716 - __main__ - INFO - [DEBUG] r/edmontongw - Content length: 419363 chars
+2026-01-26 19:57:05,716 - __main__ - INFO - [DEBUG] r/edmontongw - Has 'shreddit-subreddit-header': False
+2026-01-26 19:57:05,716 - __main__ - INFO - [DEBUG] r/edmontongw - Has 'weekly-active-users': False
+2026-01-26 19:57:05,722 - __main__ - WARNING - [X] r/edmontongw: No metrics found on page
+2026-01-26 19:57:05,722 - __main__ - WARNING - [X] r/edmontongw: Looks like banned/private sub (no header or metrics)
+2026-01-26 19:57:05,928 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:57:05,929 - __main__ - INFO - Permanently failed r/edmontongw
+2026-01-26 19:57:05,929 - __main__ - INFO - 
+================================================================================
+2026-01-26 19:57:05,929 - __main__ - INFO - STATS
+2026-01-26 19:57:05,929 - __main__ - INFO -   Scraped:  0
+2026-01-26 19:57:05,929 - __main__ - INFO -   Retries:  0
+2026-01-26 19:57:05,929 - __main__ - INFO -   Failed:   8
+2026-01-26 19:57:05,929 - __main__ - INFO -   Rate:     0.0 subs/hour
+2026-01-26 19:57:05,929 - __main__ - INFO -   Runtime:  0.1h
+2026-01-26 19:57:05,929 - __main__ - INFO -   Browsers: 2/2
+2026-01-26 19:57:05,929 - __main__ - INFO - ================================================================================
+
+2026-01-26 19:57:08,177 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/rpc/get_subreddits_not_in_intel "HTTP/2 400 Bad Request"
+2026-01-26 19:57:08,178 - supabase_client - WARNING - RPC failed, using fallback: {'message': 'structure of query does not match function result type', 'code': '42804', 'hint': None, 'details': 'Returned type integer does not match expected type bigint in column 2.'}
+2026-01-26 19:57:08,391 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:08,625 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:08,861 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:09,176 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:09,422 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:09,663 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:09,896 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=6000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:10,127 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=7000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:10,360 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=8000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:10,586 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=9000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:10,938 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=10000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:11,161 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=11000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:11,392 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=12000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:11,624 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=13000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:11,627 - supabase_client - INFO - Fetched 13230 subreddits from queue
+2026-01-26 19:57:11,871 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:12,108 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:12,393 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:12,626 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:12,863 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:13,094 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:57:13,108 - __main__ - INFO - 
+================================================================================
+2026-01-26 19:57:13,108 - __main__ - INFO - Processing batch of 4 subreddits
+2026-01-26 19:57:13,108 - __main__ - INFO - ================================================================================
+2026-01-26 19:57:13,333 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.palegirlsnsfw "HTTP/2 200 OK"
+2026-01-26 19:57:13,542 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.legendaryrizz "HTTP/2 200 OK"
+2026-01-26 19:57:13,756 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.treasurechestcelebs "HTTP/2 200 OK"
+2026-01-26 19:57:13,971 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.edmontongw "HTTP/2 200 OK"
+2026-01-26 19:57:14,475 - __main__ - INFO - Health check: 1 idle/healthy, 1 busy, 0 failed (total: 2)
+2026-01-26 19:58:11,596 - __main__ - INFO - [DEBUG] r/legendaryrizz - Page title: 'Reddit - The heart of the internet'
+2026-01-26 19:58:11,600 - __main__ - INFO - [DEBUG] r/legendaryrizz - Content length: 419572 chars
+2026-01-26 19:58:11,601 - __main__ - INFO - [DEBUG] r/legendaryrizz - Has 'shreddit-subreddit-header': False
+2026-01-26 19:58:11,601 - __main__ - INFO - [DEBUG] r/legendaryrizz - Has 'weekly-active-users': False
+2026-01-26 19:58:11,607 - __main__ - WARNING - [X] r/legendaryrizz: No metrics found on page
+2026-01-26 19:58:11,607 - __main__ - WARNING - [X] r/legendaryrizz: Looks like banned/private sub (no header or metrics)
+2026-01-26 19:58:12,639 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:58:12,642 - __main__ - INFO - Permanently failed r/legendaryrizz
+2026-01-26 19:58:12,739 - __main__ - INFO - [DEBUG] r/palegirlsnsfw - Page title: 'Reddit - The heart of the internet'
+2026-01-26 19:58:12,739 - __main__ - INFO - [DEBUG] r/palegirlsnsfw - Content length: 419570 chars
+2026-01-26 19:58:12,739 - __main__ - INFO - [DEBUG] r/palegirlsnsfw - Has 'shreddit-subreddit-header': False
+2026-01-26 19:58:12,739 - __main__ - INFO - [DEBUG] r/palegirlsnsfw - Has 'weekly-active-users': False
+2026-01-26 19:58:12,745 - __main__ - WARNING - [X] r/palegirlsnsfw: No metrics found on page
+2026-01-26 19:58:12,745 - __main__ - WARNING - [X] r/palegirlsnsfw: Looks like banned/private sub (no header or metrics)
+2026-01-26 19:58:13,006 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:58:13,007 - __main__ - INFO - Permanently failed r/palegirlsnsfw
+2026-01-26 19:58:14,509 - __main__ - INFO - Health check: 2 idle/healthy, 0 busy, 0 failed (total: 2)
+2026-01-26 19:58:18,961 - __main__ - INFO - Cleaning up...
+2026-01-26 19:58:18,962 - __main__ - ERROR - Error closing browser koeuril: Browser.close: no running event loop
+2026-01-26 19:58:18,962 - __main__ - ERROR - Error closing browser koeus69: Browser.close: no running event loop
+2026-01-26 19:58:18,963 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task cancelling name='Task-1' coro=<main() done, defined at /Users/calummelling/Desktop/redditscraper/hetzner-worker/intel_worker_adspower.py:553> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/homebrew/Cellar/python@3.14/3.14.2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/tasks.py:810]>
+2026-01-26 19:58:20,898 - __main__ - INFO - ================================================================================
+2026-01-26 19:58:20,898 - __main__ - INFO - INTEL WORKER STARTING (AdsPower Mode)
+2026-01-26 19:58:20,898 - __main__ - INFO -   Batch Size: 4
+2026-01-26 19:58:20,898 - __main__ - INFO -   Concurrent: 2
+2026-01-26 19:58:20,898 - __main__ - INFO -   Timeout: 180s
+2026-01-26 19:58:20,898 - __main__ - INFO - ================================================================================
+2026-01-26 19:58:20,898 - __main__ - INFO - ================================================================================
+2026-01-26 19:58:20,899 - __main__ - INFO - Initializing AdsPower Browsers
+2026-01-26 19:58:20,899 - __main__ - INFO - ================================================================================
+2026-01-26 19:58:21,253 - __main__ - INFO - Starting browser for profile koeuril...
+2026-01-26 19:58:21,971 - httpx - INFO - HTTP Request: GET http://local.adspower.net:50325/api/v1/browser/start?user_id=koeuril "HTTP/1.1 200 OK"
+2026-01-26 19:58:21,972 - adspower_client - INFO - Started profile koeuril on port 50368
+2026-01-26 19:58:22,053 - __main__ - INFO - [OK] Browser koeuril ready (port 50368)
+2026-01-26 19:58:22,054 - __main__ - INFO - Starting browser for profile koeus69...
+2026-01-26 19:58:22,073 - httpx - INFO - HTTP Request: GET http://local.adspower.net:50325/api/v1/browser/start?user_id=koeus69 "HTTP/1.1 200 OK"
+2026-01-26 19:58:22,074 - adspower_client - INFO - Started profile koeus69 on port 50445
+2026-01-26 19:58:22,105 - __main__ - INFO - [OK] Browser koeus69 ready (port 50445)
+2026-01-26 19:58:22,105 - __main__ - INFO - ================================================================================
+2026-01-26 19:58:22,105 - __main__ - INFO - Initialized 2/2 browsers
+2026-01-26 19:58:22,105 - __main__ - INFO - ================================================================================
+2026-01-26 19:58:22,374 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/rpc/get_subreddits_not_in_intel "HTTP/2 400 Bad Request"
+2026-01-26 19:58:22,376 - supabase_client - WARNING - RPC failed, using fallback: {'message': 'structure of query does not match function result type', 'code': '42804', 'hint': None, 'details': 'Returned type integer does not match expected type bigint in column 2.'}
+2026-01-26 19:58:22,616 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:22,893 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:23,186 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:23,422 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:23,769 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:23,991 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:24,235 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=6000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:24,471 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=7000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:24,707 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=8000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:24,971 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=9000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:25,221 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=10000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:25,462 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=11000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:25,688 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=12000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:25,947 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=13000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:25,953 - supabase_client - INFO - Fetched 13230 subreddits from queue
+2026-01-26 19:58:26,171 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:26,405 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:26,649 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:26,923 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:27,198 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:27,440 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:27,463 - __main__ - INFO - 
+================================================================================
+2026-01-26 19:58:27,464 - __main__ - INFO - Processing batch of 4 subreddits
+2026-01-26 19:58:27,464 - __main__ - INFO - ================================================================================
+2026-01-26 19:58:27,691 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.cencalgonewild "HTTP/2 200 OK"
+2026-01-26 19:58:27,927 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.nikunikunii "HTTP/2 200 OK"
+2026-01-26 19:58:28,135 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.vagception "HTTP/2 200 OK"
+2026-01-26 19:58:28,341 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.cumsterdam "HTTP/2 200 OK"
+2026-01-26 19:58:42,178 - __main__ - INFO - [OK] r/cencalgonewild: 22000 visitors, 1300 contributions
+2026-01-26 19:58:42,960 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:58:43,009 - __main__ - INFO - [OK] r/nikunikunii: 11000 visitors, 3 contributions
+2026-01-26 19:58:43,243 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:58:54,064 - __main__ - INFO - [OK] r/vagception: 23000 visitors, 42 contributions
+2026-01-26 19:58:54,422 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:58:54,453 - __main__ - INFO - [OK] r/cumsterdam: 20000 visitors, 100 contributions
+2026-01-26 19:58:54,683 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:58:54,686 - __main__ - INFO - 
+================================================================================
+2026-01-26 19:58:54,686 - __main__ - INFO - STATS
+2026-01-26 19:58:54,687 - __main__ - INFO -   Scraped:  4
+2026-01-26 19:58:54,687 - __main__ - INFO -   Retries:  0
+2026-01-26 19:58:54,687 - __main__ - INFO -   Failed:   0
+2026-01-26 19:58:54,687 - __main__ - INFO -   Rate:     426.2 subs/hour
+2026-01-26 19:58:54,687 - __main__ - INFO -   Runtime:  0.0h
+2026-01-26 19:58:54,687 - __main__ - INFO -   Browsers: 2/2
+2026-01-26 19:58:54,687 - __main__ - INFO - ================================================================================
+
+2026-01-26 19:58:56,928 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/rpc/get_subreddits_not_in_intel "HTTP/2 400 Bad Request"
+2026-01-26 19:58:56,929 - supabase_client - WARNING - RPC failed, using fallback: {'message': 'structure of query does not match function result type', 'code': '42804', 'hint': None, 'details': 'Returned type integer does not match expected type bigint in column 2.'}
+2026-01-26 19:58:57,157 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:57,419 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:57,647 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:57,888 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:58,132 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:58,423 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:58,650 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=6000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:58,923 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=7000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:59,178 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=8000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:59,430 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=9000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:59,677 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=10000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:58:59,922 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=11000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:59:00,186 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=12000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:59:00,453 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=13000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:59:00,456 - supabase_client - INFO - Fetched 13230 subreddits from queue
+2026-01-26 19:59:00,693 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:59:00,942 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:59:01,188 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:59:01,425 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:59:01,728 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:59:02,223 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 19:59:02,255 - __main__ - INFO - 
+================================================================================
+2026-01-26 19:59:02,257 - __main__ - INFO - Processing batch of 4 subreddits
+2026-01-26 19:59:02,259 - __main__ - INFO - ================================================================================
+2026-01-26 19:59:02,476 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.canadian_amateurs "HTTP/2 200 OK"
+2026-01-26 19:59:02,701 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.fascistmisogynyfather "HTTP/2 200 OK"
+2026-01-26 19:59:02,911 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.videogirlsnextdoor "HTTP/2 200 OK"
+2026-01-26 19:59:03,135 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.scotlandsexchat "HTTP/2 200 OK"
+2026-01-26 19:59:12,460 - __main__ - INFO - Cleaning up...
+2026-01-26 19:59:12,577 - __main__ - ERROR - Error scraping r/canadian_amateurs: Page.evaluate: Target page, context or browser has been closed
+2026-01-26 19:59:12,954 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:59:19,119 - __main__ - INFO - [OK] r/fascistmisogynyfather: 62000 visitors, 2200 contributions
+2026-01-26 19:59:19,379 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 19:59:21,114 - httpx - INFO - HTTP Request: GET http://local.adspower.net:50325/api/v1/browser/stop?user_id=koeuril "HTTP/1.1 200 OK"
+2026-01-26 19:59:21,124 - adspower_client - INFO - Stopped profile koeuril
+2026-01-26 19:59:21,124 - __main__ - INFO - Closed browser koeuril
+2026-01-26 19:59:29,220 - httpx - INFO - HTTP Request: GET http://local.adspower.net:50325/api/v1/browser/stop?user_id=koeus69 "HTTP/1.1 200 OK"
+2026-01-26 19:59:29,221 - adspower_client - INFO - Stopped profile koeus69
+2026-01-26 19:59:29,221 - __main__ - INFO - Closed browser koeus69
+2026-01-26 19:59:29,221 - __main__ - INFO - Cleanup complete
+2026-01-26 19:59:29,308 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TimeoutError('Timeout 3000ms exceeded.\nCall log:\n  - waiting for locator("button:has-text(\\"Yes, I\'m over 18\\")")\n    - waiting for" https://www.reddit.com/r/FascistMisogynyFather/" navigation to finish...\n    - navigated to "https://www.reddit.com/r/FascistMisogynyFather/"\n')>
+playwright._impl._errors.TimeoutError: Timeout 3000ms exceeded.
+Call log:
+  - waiting for locator("button:has-text(\"Yes, I'm over 18\")")
+    - waiting for" https://www.reddit.com/r/FascistMisogynyFather/" navigation to finish...
+    - navigated to "https://www.reddit.com/r/FascistMisogynyFather/"
+
+2026-01-26 19:59:29,309 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed\nCall log:\n  - waiting for locator("button:has-text(\\"I am 18 or older\\")")\n')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("button:has-text(\"I am 18 or older\")")
+
+2026-01-26 20:01:33,083 - __main__ - INFO - ================================================================================
+2026-01-26 20:01:33,084 - __main__ - INFO - INTEL WORKER STARTING (AdsPower Mode)
+2026-01-26 20:01:33,084 - __main__ - INFO -   Batch Size: 4
+2026-01-26 20:01:33,084 - __main__ - INFO -   Concurrent: 2
+2026-01-26 20:01:33,084 - __main__ - INFO -   Timeout: 180s
+2026-01-26 20:01:33,084 - __main__ - INFO - ================================================================================
+2026-01-26 20:01:33,084 - __main__ - INFO - ================================================================================
+2026-01-26 20:01:33,084 - __main__ - INFO - Initializing AdsPower Browsers
+2026-01-26 20:01:33,084 - __main__ - INFO - ================================================================================
+2026-01-26 20:01:33,544 - __main__ - INFO - Starting browser for profile koeuril...
+2026-01-26 20:01:40,443 - httpx - INFO - HTTP Request: GET http://local.adspower.net:50325/api/v1/browser/start?user_id=koeuril "HTTP/1.1 200 OK"
+2026-01-26 20:01:40,446 - adspower_client - INFO - Started profile koeuril on port 52266
+2026-01-26 20:01:40,574 - __main__ - INFO - [OK] Browser koeuril ready (port 52266)
+2026-01-26 20:01:40,574 - __main__ - INFO - Starting browser for profile koeus69...
+2026-01-26 20:01:47,055 - httpx - INFO - HTTP Request: GET http://local.adspower.net:50325/api/v1/browser/start?user_id=koeus69 "HTTP/1.1 200 OK"
+2026-01-26 20:01:47,057 - adspower_client - INFO - Started profile koeus69 on port 52318
+2026-01-26 20:01:47,095 - __main__ - INFO - [OK] Browser koeus69 ready (port 52318)
+2026-01-26 20:01:47,095 - __main__ - INFO - ================================================================================
+2026-01-26 20:01:47,096 - __main__ - INFO - Initialized 2/2 browsers
+2026-01-26 20:01:47,096 - __main__ - INFO - ================================================================================
+2026-01-26 20:01:47,575 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/rpc/get_subreddits_not_in_intel "HTTP/2 400 Bad Request"
+2026-01-26 20:01:47,577 - supabase_client - WARNING - RPC failed, using fallback: {'message': 'structure of query does not match function result type', 'code': '42804', 'hint': None, 'details': 'Returned type integer does not match expected type bigint in column 2.'}
+2026-01-26 20:01:47,805 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:48,029 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:48,328 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:48,673 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:48,953 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:49,191 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:49,421 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=6000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:49,655 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=7000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:49,879 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=8000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:50,132 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=9000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:50,359 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=10000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:50,587 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=11000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:50,828 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=12000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:51,058 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=13000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:51,062 - supabase_client - INFO - Fetched 13230 subreddits from queue
+2026-01-26 20:01:51,284 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:51,519 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:51,757 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:51,985 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:52,221 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:52,478 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:01:52,498 - __main__ - INFO - 
+================================================================================
+2026-01-26 20:01:52,498 - __main__ - INFO - Processing batch of 4 subreddits
+2026-01-26 20:01:52,498 - __main__ - INFO - ================================================================================
+2026-01-26 20:01:52,720 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.canadian_amateurs "HTTP/2 200 OK"
+2026-01-26 20:01:52,934 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.videogirlsnextdoor "HTTP/2 200 OK"
+2026-01-26 20:01:53,138 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.scotlandsexchat "HTTP/2 200 OK"
+2026-01-26 20:01:53,368 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.wifegfdaughtersismom "HTTP/2 200 OK"
+2026-01-26 20:02:04,093 - __main__ - INFO - [OK] r/canadian_amateurs: 11000 visitors, 339 contributions
+2026-01-26 20:02:04,342 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 20:02:05,008 - __main__ - INFO - [OK] r/videogirlsnextdoor: 75000 visitors, 965 contributions
+2026-01-26 20:02:05,236 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 20:02:17,295 - __main__ - INFO - [OK] r/scotlandsexchat: 62000 visitors, 8700 contributions
+2026-01-26 20:02:17,572 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 20:02:18,724 - __main__ - INFO - [OK] r/wifegfdaughtersismom: 15000 visitors, 484 contributions
+2026-01-26 20:02:18,949 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 201 Created"
+2026-01-26 20:02:18,952 - __main__ - INFO - 
+================================================================================
+2026-01-26 20:02:18,952 - __main__ - INFO - STATS
+2026-01-26 20:02:18,952 - __main__ - INFO -   Scraped:  4
+2026-01-26 20:02:18,952 - __main__ - INFO -   Retries:  0
+2026-01-26 20:02:18,952 - __main__ - INFO -   Failed:   0
+2026-01-26 20:02:18,952 - __main__ - INFO -   Rate:     313.9 subs/hour
+2026-01-26 20:02:18,952 - __main__ - INFO -   Runtime:  0.0h
+2026-01-26 20:02:18,952 - __main__ - INFO -   Browsers: 2/2
+2026-01-26 20:02:18,952 - __main__ - INFO - ================================================================================
+
+2026-01-26 20:02:21,183 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/rpc/get_subreddits_not_in_intel "HTTP/2 400 Bad Request"
+2026-01-26 20:02:21,184 - supabase_client - WARNING - RPC failed, using fallback: {'message': 'structure of query does not match function result type', 'code': '42804', 'hint': None, 'details': 'Returned type integer does not match expected type bigint in column 2.'}
+2026-01-26 20:02:21,409 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:21,667 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:21,918 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:22,159 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:22,401 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:22,675 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:22,935 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=6000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:23,167 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=7000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:23,504 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=8000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:23,750 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=9000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:23,995 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=10000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:24,249 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=11000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:24,499 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=12000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:24,723 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=13000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:24,726 - supabase_client - INFO - Fetched 13230 subreddits from queue
+2026-01-26 20:02:24,935 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:25,173 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:25,419 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:25,701 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:25,946 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:26,184 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:02:26,205 - __main__ - INFO - 
+================================================================================
+2026-01-26 20:02:26,206 - __main__ - INFO - Processing batch of 4 subreddits
+2026-01-26 20:02:26,206 - __main__ - INFO - ================================================================================
+2026-01-26 20:02:26,412 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.scifigirls "HTTP/2 200 OK"
+2026-01-26 20:02:26,650 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.anikkaalbrite "HTTP/2 200 OK"
+2026-01-26 20:02:26,876 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.sidebiside "HTTP/2 200 OK"
+2026-01-26 20:02:27,169 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.armaniblack "HTTP/2 200 OK"
+2026-01-26 20:02:38,906 - __main__ - INFO - [OK] r/scifigirls: 4600 visitors, 13 contributions
+2026-01-26 20:02:39,155 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 20:02:39,206 - __main__ - INFO - [OK] r/anikkaalbrite: 14000 visitors, 30 contributions
+2026-01-26 20:02:39,421 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 20:02:52,942 - __main__ - INFO - Health check: 1 idle/healthy, 1 busy, 0 failed (total: 2)
+2026-01-26 20:02:54,711 - __main__ - INFO - [OK] r/armaniblack: 10000 visitors, 7 contributions
+2026-01-26 20:02:54,965 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 20:03:00,251 - __main__ - INFO - [OK] r/sidebiside: 22000 visitors, 120 contributions
+2026-01-26 20:03:00,477 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 20:03:00,479 - __main__ - INFO - 
+================================================================================
+2026-01-26 20:03:00,482 - __main__ - INFO - STATS
+2026-01-26 20:03:00,483 - __main__ - INFO -   Scraped:  8
+2026-01-26 20:03:00,483 - __main__ - INFO -   Retries:  0
+2026-01-26 20:03:00,483 - __main__ - INFO -   Failed:   0
+2026-01-26 20:03:00,483 - __main__ - INFO -   Rate:     329.5 subs/hour
+2026-01-26 20:03:00,483 - __main__ - INFO -   Runtime:  0.0h
+2026-01-26 20:03:00,484 - __main__ - INFO -   Browsers: 2/2
+2026-01-26 20:03:00,484 - __main__ - INFO - ================================================================================
+
+2026-01-26 20:03:02,802 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/rpc/get_subreddits_not_in_intel "HTTP/2 400 Bad Request"
+2026-01-26 20:03:02,804 - supabase_client - WARNING - RPC failed, using fallback: {'message': 'structure of query does not match function result type', 'code': '42804', 'hint': None, 'details': 'Returned type integer does not match expected type bigint in column 2.'}
+2026-01-26 20:03:03,017 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:03,255 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:03,500 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:03,733 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:03,965 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:04,193 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:04,419 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=6000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:04,671 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=7000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:04,918 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=8000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:05,151 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=9000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:05,375 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=10000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:05,604 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=11000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:05,841 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=12000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:06,069 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=13000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:06,073 - supabase_client - INFO - Fetched 13230 subreddits from queue
+2026-01-26 20:03:06,294 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:06,524 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:06,750 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:06,987 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:07,350 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:07,584 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:07,599 - __main__ - INFO - 
+================================================================================
+2026-01-26 20:03:07,600 - __main__ - INFO - Processing batch of 4 subreddits
+2026-01-26 20:03:07,600 - __main__ - INFO - ================================================================================
+2026-01-26 20:03:07,834 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.nsfwpee "HTTP/2 200 OK"
+2026-01-26 20:03:08,045 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.thehentaizone "HTTP/2 200 OK"
+2026-01-26 20:03:08,254 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.kannada_adult_mindset "HTTP/2 200 OK"
+2026-01-26 20:03:08,456 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.bluearchivehentai "HTTP/2 200 OK"
+2026-01-26 20:03:24,443 - __main__ - INFO - [OK] r/nsfwpee: 25000 visitors, 381 contributions
+2026-01-26 20:03:24,706 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 20:03:25,391 - __main__ - INFO - [OK] r/thehentaizone: 18000 visitors, 683 contributions
+2026-01-26 20:03:25,602 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 20:03:37,330 - __main__ - INFO - [OK] r/kannada_adult_mindset: 68000 visitors, 1100 contributions
+2026-01-26 20:03:37,742 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 201 Created"
+2026-01-26 20:03:38,445 - __main__ - INFO - [OK] r/bluearchivehentai: 7200 visitors, 92 contributions
+2026-01-26 20:03:38,658 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 20:03:38,659 - __main__ - INFO - 
+================================================================================
+2026-01-26 20:03:38,659 - __main__ - INFO - STATS
+2026-01-26 20:03:38,659 - __main__ - INFO -   Scraped:  12
+2026-01-26 20:03:38,659 - __main__ - INFO -   Retries:  0
+2026-01-26 20:03:38,659 - __main__ - INFO -   Failed:   0
+2026-01-26 20:03:38,659 - __main__ - INFO -   Rate:     344.0 subs/hour
+2026-01-26 20:03:38,660 - __main__ - INFO -   Runtime:  0.0h
+2026-01-26 20:03:38,660 - __main__ - INFO -   Browsers: 2/2
+2026-01-26 20:03:38,660 - __main__ - INFO - ================================================================================
+
+2026-01-26 20:03:40,882 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/rpc/get_subreddits_not_in_intel "HTTP/2 400 Bad Request"
+2026-01-26 20:03:40,884 - supabase_client - WARNING - RPC failed, using fallback: {'message': 'structure of query does not match function result type', 'code': '42804', 'hint': None, 'details': 'Returned type integer does not match expected type bigint in column 2.'}
+2026-01-26 20:03:41,106 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:41,350 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:41,573 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:41,800 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:42,027 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:42,257 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:42,487 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=6000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:42,719 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=7000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:42,967 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=8000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:43,210 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=9000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:43,456 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=10000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:43,699 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=11000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:43,940 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=12000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:44,166 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=13000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:44,171 - supabase_client - INFO - Fetched 13230 subreddits from queue
+2026-01-26 20:03:44,388 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:44,618 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:44,849 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:45,071 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:45,310 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:45,555 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:03:45,578 - __main__ - INFO - 
+================================================================================
+2026-01-26 20:03:45,579 - __main__ - INFO - Processing batch of 4 subreddits
+2026-01-26 20:03:45,579 - __main__ - INFO - ================================================================================
+2026-01-26 20:03:45,772 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.celebrity_soles "HTTP/2 200 OK"
+2026-01-26 20:03:46,000 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.astronomicalass "HTTP/2 200 OK"
+2026-01-26 20:03:46,202 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.reversenetorare "HTTP/2 200 OK"
+2026-01-26 20:03:46,403 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.sexinfrontofothers2 "HTTP/2 200 OK"
+2026-01-26 20:03:55,226 - __main__ - INFO - Health check: 1 idle/healthy, 1 busy, 0 failed (total: 2)
+2026-01-26 20:04:09,480 - __main__ - INFO - [OK] r/astronomicalass: 7500 visitors, 199 contributions
+2026-01-26 20:04:09,714 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 20:04:09,885 - __main__ - INFO - [OK] r/celebrity_soles: 59000 visitors, 157 contributions
+2026-01-26 20:04:10,136 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 201 Created"
+2026-01-26 20:04:24,251 - __main__ - INFO - [OK] r/reversenetorare: 9900 visitors, 4 contributions
+2026-01-26 20:04:24,850 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 201 Created"
+2026-01-26 20:04:25,473 - __main__ - INFO - [OK] r/sexinfrontofothers2: 70000 visitors, 57 contributions
+2026-01-26 20:04:25,734 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 201 Created"
+2026-01-26 20:04:25,735 - __main__ - INFO - 
+================================================================================
+2026-01-26 20:04:25,735 - __main__ - INFO - STATS
+2026-01-26 20:04:25,735 - __main__ - INFO -   Scraped:  16
+2026-01-26 20:04:25,735 - __main__ - INFO -   Retries:  0
+2026-01-26 20:04:25,735 - __main__ - INFO -   Failed:   0
+2026-01-26 20:04:25,735 - __main__ - INFO -   Rate:     333.6 subs/hour
+2026-01-26 20:04:25,735 - __main__ - INFO -   Runtime:  0.0h
+2026-01-26 20:04:25,735 - __main__ - INFO -   Browsers: 2/2
+2026-01-26 20:04:25,735 - __main__ - INFO - ================================================================================
+
+2026-01-26 20:04:28,086 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/rpc/get_subreddits_not_in_intel "HTTP/2 400 Bad Request"
+2026-01-26 20:04:28,087 - supabase_client - WARNING - RPC failed, using fallback: {'message': 'structure of query does not match function result type', 'code': '42804', 'hint': None, 'details': 'Returned type integer does not match expected type bigint in column 2.'}
+2026-01-26 20:04:28,686 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:29,010 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:29,339 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:29,652 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:29,951 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:30,270 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:30,576 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=6000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:30,886 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=7000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:31,205 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=8000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:31,589 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=9000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:31,868 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=10000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:32,193 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=11000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:32,521 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=12000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:32,871 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=13000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:32,876 - supabase_client - INFO - Fetched 13230 subreddits from queue
+2026-01-26 20:04:33,176 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:33,506 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:33,803 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:34,086 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:34,383 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:34,641 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:04:34,720 - __main__ - INFO - 
+================================================================================
+2026-01-26 20:04:34,720 - __main__ - INFO - Processing batch of 4 subreddits
+2026-01-26 20:04:34,720 - __main__ - INFO - ================================================================================
+2026-01-26 20:04:34,945 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.ootd_altgothemo "HTTP/2 200 OK"
+2026-01-26 20:04:35,160 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.araararoleplay18plus "HTTP/2 200 OK"
+2026-01-26 20:04:35,398 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.gayeyebleach "HTTP/2 200 OK"
+2026-01-26 20:04:35,615 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.art_of_nudes "HTTP/2 200 OK"
+2026-01-26 20:04:52,524 - __main__ - INFO - [OK] r/ootd_altgothemo: 15000 visitors, 132 contributions
+2026-01-26 20:04:52,802 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 20:04:54,352 - __main__ - INFO - [OK] r/araararoleplay18plus: 49000 visitors, 1800 contributions
+2026-01-26 20:04:54,589 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 20:04:55,712 - __main__ - INFO - Health check: 0 idle/healthy, 2 busy, 0 failed (total: 2)
+2026-01-26 20:05:04,559 - __main__ - INFO - [OK] r/gayeyebleach: 3300 visitors, 8 contributions
+2026-01-26 20:05:04,798 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 201 Created"
+2026-01-26 20:05:07,077 - __main__ - INFO - [OK] r/art_of_nudes: 23000 visitors, 477 contributions
+2026-01-26 20:05:07,292 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?on_conflict=subreddit_name "HTTP/2 200 OK"
+2026-01-26 20:05:07,299 - __main__ - INFO - 
+================================================================================
+2026-01-26 20:05:07,300 - __main__ - INFO - STATS
+2026-01-26 20:05:07,300 - __main__ - INFO -   Scraped:  20
+2026-01-26 20:05:07,300 - __main__ - INFO -   Retries:  0
+2026-01-26 20:05:07,300 - __main__ - INFO -   Failed:   0
+2026-01-26 20:05:07,300 - __main__ - INFO -   Rate:     336.1 subs/hour
+2026-01-26 20:05:07,300 - __main__ - INFO -   Runtime:  0.1h
+2026-01-26 20:05:07,300 - __main__ - INFO -   Browsers: 2/2
+2026-01-26 20:05:07,300 - __main__ - INFO - ================================================================================
+
+2026-01-26 20:05:09,527 - httpx - INFO - HTTP Request: POST https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/rpc/get_subreddits_not_in_intel "HTTP/2 400 Bad Request"
+2026-01-26 20:05:09,531 - supabase_client - WARNING - RPC failed, using fallback: {'message': 'structure of query does not match function result type', 'code': '42804', 'hint': None, 'details': 'Returned type integer does not match expected type bigint in column 2.'}
+2026-01-26 20:05:09,748 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:09,997 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:10,611 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:10,842 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:11,077 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:11,309 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:11,574 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=6000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:11,812 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=7000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:12,052 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=8000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:12,283 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=9000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:12,530 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=10000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:12,766 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=11000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:13,011 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=12000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:13,294 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/subreddit_queue?select=subreddit_name%2Csubscribers&subscribers=gte.5000&order=subscribers.desc&offset=13000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:13,297 - supabase_client - INFO - Fetched 13230 subreddits from queue
+2026-01-26 20:05:13,530 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=0&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:13,755 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=1000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:14,016 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=2000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:14,262 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=3000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:14,560 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=4000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:14,788 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=subreddit_name%2Cscrape_status%2Cerror_message&offset=5000&limit=1000 "HTTP/2 200 OK"
+2026-01-26 20:05:14,812 - __main__ - INFO - 
+================================================================================
+2026-01-26 20:05:14,812 - __main__ - INFO - Processing batch of 4 subreddits
+2026-01-26 20:05:14,812 - __main__ - INFO - ================================================================================
+2026-01-26 20:05:15,020 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.nsfwspectrum "HTTP/2 200 OK"
+2026-01-26 20:05:15,246 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.hairymilf "HTTP/2 200 OK"
+2026-01-26 20:05:15,469 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.bnwocuckold "HTTP/2 200 OK"
+2026-01-26 20:05:15,686 - httpx - INFO - HTTP Request: GET https://jmchmbwhnmlednaycxqh.supabase.co/rest/v1/nsfw_subreddit_intel?select=error_message&subreddit_name=eq.letboysbemanipulated "HTTP/2 200 OK"

@@ -7,12 +7,14 @@ import asyncio
 import logging
 import sys
 import re
+import httpx
 from datetime import datetime, timezone
 from typing import Optional, Dict
 from playwright.async_api import async_playwright, Page
 
 from adspower_client import AdsPowerClient
 from supabase_client import SupabaseClient
+from user_agents import get_reddit_headers, get_reddit_cookies
 from config import (
     ADSPOWER_PROFILE_IDS,
     INTEL_BATCH_SIZE,
@@ -20,6 +22,7 @@ from config import (
     INTEL_CONCURRENT,
     INTEL_DELAY_BETWEEN_BATCHES,
     PROXYEMPIRE_ROTATION_URL,
+    CRAWLER_PROXY,
     LOG_LEVEL,
     LOG_FORMAT,
     HEALTH_CHECK_INTERVAL,
@@ -137,6 +140,46 @@ class IntelWorkerAdsPower:
         if active_count == 0:
             raise RuntimeError("No browsers initialized! Check AdsPower setup.")
     
+    async def check_if_banned(self, subreddit_name: str) -> Optional[str]:
+        """
+        Quick check if subreddit is banned/private via JSON endpoint.
+        Returns error message if banned/private, None if accessible.
+        """
+        url = f"https://www.reddit.com/r/{subreddit_name}/about.json"
+        
+        try:
+            async with httpx.AsyncClient(proxies=CRAWLER_PROXY, timeout=10) as client:
+                headers = get_reddit_headers()
+                cookies = get_reddit_cookies()
+                
+                response = await client.get(url, headers=headers, cookies=cookies)
+                
+                # Check for banned/private indicators
+                if response.status_code in [403, 404]:
+                    try:
+                        data = response.json()
+                        reason = data.get("reason", "").lower()
+                        message = data.get("message", "").lower()
+                        
+                        if "banned" in reason or "banned" in message:
+                            return "Subreddit banned"
+                        if "private" in reason or "private" in message:
+                            return "Subreddit private"
+                        if "not found" in message:
+                            return "Subreddit not found"
+                    except:
+                        # Can't parse JSON, but 404 likely means banned/not found
+                        return "Subreddit unavailable"
+                
+                # 200 OK means it's accessible
+                if response.status_code == 200:
+                    return None
+                    
+        except Exception as e:
+            logger.debug(f"JSON check failed for r/{subreddit_name}: {e}")
+        
+        return None  # If check fails, proceed with browser scrape anyway
+    
     async def scrape_subreddit(self, subreddit_name: str, page: Page) -> Optional[Dict]:
         """
         Scrape metrics for a single subreddit.
@@ -221,7 +264,7 @@ class IntelWorkerAdsPower:
                     logger.debug(f"r/{subreddit_name}: No subreddit content found on page")
             
             if is_unavailable:
-                logger.warning(f"[X] r/{subreddit_name}: Subreddit is unavailable (banned/private/deleted) - page title: '{page_title[:60]}'")
+                logger.warning(f"[X] r/{subreddit_name}: Subreddit is unavailable (banned/private/deleted)")
                 return {"permanently_failed": True, "error": "Subreddit banned/private/deleted"}
             
             data = {
@@ -245,9 +288,23 @@ class IntelWorkerAdsPower:
                     data["weekly_contributions"] = self._parse_metric(contrib_match.group(1))
                     break
             
-            # Only mark as completed if we got at least some data
+            # If no metrics found at all, this might be a banned/private sub
             if not data.get("weekly_visitors") and not data.get("weekly_contributions"):
-                logger.warning(f"X r/{subreddit_name}: No metrics found, will retry")
+                logger.warning(f"[X] r/{subreddit_name}: No metrics found on page")
+                
+                # Double-check: is this actually a banned/unavailable sub?
+                # Look for ANY signs this isn't a real subreddit page
+                if (
+                    "shreddit-subreddit-header" not in content or
+                    page_title_lower == "reddit - dive into anything" or
+                    "banned" in page_title_lower or
+                    "private" in content_lower[:5000]  # Check first 5k chars
+                ):
+                    logger.warning(f"[X] r/{subreddit_name}: Looks like banned/private sub (no header or metrics)")
+                    return {"permanently_failed": True, "error": "No metrics - likely banned/private"}
+                
+                # Otherwise, genuine timeout/loading issue - retry
+                logger.warning(f"[X] r/{subreddit_name}: Page loaded but no metrics found, will retry")
                 return None
             
             # Mark as completed
@@ -332,6 +389,14 @@ class IntelWorkerAdsPower:
         profile_id = None
         
         try:
+            # STEP 1: Quick JSON check - is sub banned/private?
+            ban_reason = await self.check_if_banned(subreddit_name)
+            if ban_reason:
+                logger.warning(f"[X] r/{subreddit_name}: {ban_reason} (JSON check)")
+                await self.supabase.mark_intel_failed(subreddit_name, ban_reason)
+                self.stats["failed"] += 1
+                return
+            
             # Check how many times this sub has failed before
             failure_count = 0
             try:
@@ -347,7 +412,7 @@ class IntelWorkerAdsPower:
             except:
                 pass
             
-            # Acquire browser from queue (with timeout)
+            # STEP 2: Acquire browser from queue (with timeout)
             async with asyncio.timeout(60):
                 profile_id = await self.browser_queue.get()
             
